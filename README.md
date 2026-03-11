@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Digital Twin Bina Marga — Dashboard
 
-## Getting Started
+Frontend slicing assignment for Digital Twin Bina Marga, a road and bridge infrastructure monitoring system.
 
-First, run the development server:
+## 🔗 Links
+- **Live Demo:** [coming soon]
+- **Figma Design:** [coming soon]
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🛠 Tech Stack
+- **Next.js 15** — App Router
+- **Tailwind CSS v4** — utility-first styling with custom design tokens
+- **TypeScript** — type safety
+- **React Leaflet** — interactive map
+- **Lucide React** — icon library
+
+## 📁 Project Structure
+```
+app/
+  layout.tsx          # Root layout with ThemeProvider
+  page.tsx            # Dashboard page
+  globals.css         # Design tokens & global styles
+components/
+  atoms/              # StatusBadge, TypeTag, StatIcon, NavItem
+  molecules/          # StatCard, AssetListItem, Sidebar
+  organisms/          # DashboardNavbar, StatCardGrid, MapSection, AssetTable
+  templates/          # DashboardLayout
+contexts/
+  ThemeContext.tsx    # Dark mode state management
+data/
+  mockData.ts         # Mock infrastructure data
+hooks/
+  useLeafletMap.ts    # Custom hook for Leaflet map initialization
+types/
+  index.ts            # Shared TypeScript interfaces
+constants/
+  index.ts            # Design system constants
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Design System
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Design tokens defined in `globals.css` via Tailwind v4 `@theme`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Primary:** `#3B67F6` (base), `#1E378A` (darker), `#93ACFD` (light)
+- **Neutral:** `#1A1A1A` → `#F5F5F5`
+- **System:** Green / Yellow / Red for status indicators
+- **Typography:** h2 (28px/700) → caption (12px)
+- **Shadows:** sm / md / lg
 
-## Learn More
+## 🧱 Component Architecture
 
-To learn more about Next.js, take a look at the following resources:
+Follows **Atomic Design** methodology:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Atoms** — smallest reusable units (badges, icons, tags, nav items)
+- **Molecules** — combinations of atoms (stat card, asset list item, sidebar)
+- **Organisms** — complex UI sections (map section, asset table, stat grid)
+- **Templates** — page-level layout (dashboard layout with sidebar)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ✨ Features
 
-## Deploy on Vercel
+- **Infrastructure Map** — interactive Leaflet map with custom shape markers (Road=▬, Bridge=◆, Sensor=●)
+- **Asset Table** — scrollable list of 10 infrastructure assets with status badges
+- **Stat Cards** — 4 key metrics with semantic color coding
+- **Dark Mode** — full dark mode support via ThemeContext
+- **Responsive** — mobile (1 col), tablet (2 col), desktop (4 col + side-by-side layout)
+- **Sidebar** — collapsible navigation with desktop collapse toggle and mobile drawer
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🚀 Getting Started
+```bash
+npm install
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000)
+
+## 🤖 AI Usage
+
+AI was used as a pair programming tool for generating component boilerplate and debugging. All design decisions, UX reasoning, and architectural choices were evaluated and decided independently.
