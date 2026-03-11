@@ -3,8 +3,7 @@
 Frontend slicing assignment for Digital Twin Bina Marga, a road and bridge infrastructure monitoring system.
 
 ## 🔗 Links
-- **Live Demo:** [coming soon]
-- **Figma Design:** [coming soon]
+- **Live Demo:** https://digital-twin-bina-marga.vercel.app/
 
 ## 🛠 Tech Stack
 - **Next.js 15** — App Router
